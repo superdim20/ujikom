@@ -34,12 +34,13 @@
     <!-- Layout wrapper -->
     @include('layouts.include.navbar')
 
+    @include('sweetalert::alert')
     <!-- content -->
     <div class="content-wrapper">
       <div class="container mt-3">
         <div class="card">
           <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Publisher</h5>
+            <h5 class="mb-0"><b>PUBLISHER</b></h5>
             <a href="{{ route('publisher.create') }}" class="btn btn-primary btn-sm">Tambah publisher</a>
           </div>
           <div class="table-responsive">
@@ -64,13 +65,13 @@
                         </button>
                         <ul class="dropdown-menu">
                         <li>
-                          <a href="{{ route('buku.edit', $data->id) }}" class="dropdown-item text-warning">
+                          <a href="{{ route('publisher.edit', $data->id) }}" class="dropdown-item text-warning">
                             <i class="bx bx-edit-alt me-2"></i> Edit
                           </a>
                         </li>
                         <li>
                           <!-- Form delete dengan tombol submit tersembunyi -->
-                          <form action="{{ route('buku.destroy', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
+                          <form action="{{ route('publisher.destroy', $data->id) }}" method="POST" id="delete-form-{{ $data->id }}">
                             @csrf
                             @method('DELETE')
                             <button type="button" class="dropdown-item text-danger" onclick="confirmDelete({{ $data->id }})">

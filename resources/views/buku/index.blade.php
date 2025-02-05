@@ -33,13 +33,13 @@
   <body>
     <!-- Layout wrapper -->
     @include('layouts.include.navbar')
-
+    @include('sweetalert::alert')
     <!-- content -->
     <div class="content-wrapper">
       <div class="container mt-3">
         <div class="card">
           <div class="card-header d-flex justify-content-between align-items-center">
-            <h5 class="mb-0">Buku</h5>
+            <h5 class="mb-0"><b>BUKU</b></h5>
             <a href="{{ route('buku.create') }}" class="btn btn-primary btn-sm">Tambah buku</a>
           </div>
           <div class="table-responsive">

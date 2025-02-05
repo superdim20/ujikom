@@ -7,6 +7,7 @@ use App\Models\Publisher;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Storage;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BukuController extends Controller
 {
@@ -47,6 +48,7 @@ class BukuController extends Controller
         $image = $request->file('image');
         $image->storeAs('public/bukus', $image->hashName());
         $buku->image = $image->hashName();
+        Alert::success('Success', 'Data berhasil disimpan')->autoClose(2000);
         $buku->save();
 
         return redirect()->route('buku.index');
@@ -97,6 +99,7 @@ class BukuController extends Controller
             $image->storeAs('public/bukus', $image->hashName());
             $buku->image = $image->hashName();
         }
+        Alert::success('Success', 'Data berhasil diedit')->autoClose(2000);
         $buku->save();
         return redirect()->route('buku.index');
     }
@@ -106,6 +109,7 @@ class BukuController extends Controller
     {
         $buku = Buku::findOrFail($id);
         Storage::delete('public/bukus/' . $buku->image);
+        Alert::success('Success', 'Data berhasil dihapus')->autoClose(2000);
         $buku->delete();
         return redirect()->route('buku.index');
     }

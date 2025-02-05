@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Publisher ;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class PublisherController extends Controller
 {
@@ -33,11 +34,16 @@ class PublisherController extends Controller
     {
         $this->validate($request, [
             'nama_publisher' => 'required|min:5',
+            
         ]);
 
         $publisher = new Publisher ();
         $publisher->nama_publisher = $request->nama_publisher;
+
         $publisher->save();
+
+        Alert::success('Success', 'Data berhasil disimpan')->autoClose(2000); // SweetAlert sukses
+
         return redirect()->route('publisher.index');
     }
 
@@ -56,6 +62,8 @@ class PublisherController extends Controller
 
         $publisher = Publisher ::findOrFail($id);
         $publisher->nama_publisher = $request->nama_publisher;
+
+        Alert::success('Success', 'Data berhasil diedit')->autoClose(2000);
         $publisher->save();
         return redirect()->route('publisher.index');
 
@@ -67,6 +75,7 @@ class PublisherController extends Controller
     public function destroy($id)
     {
         $publisher = Publisher ::findOrFail($id);
+        Alert::success('Success', 'Data berhasil dihapus')->autoClose(2000); // SweetAlert sukses
         $publisher->delete();
         return redirect()->route('publisher.index');
 
