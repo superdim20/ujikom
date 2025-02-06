@@ -47,9 +47,67 @@
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
 
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+
+    <style>
+      .small-box {
+        position: relative;
+        display: block;
+        background: #17a2b8;
+        color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+
+      .small-box:hover {
+        transform: translateY(-5px);
+      }
+
+      .small-box .inner {
+        padding: 10px;
+      }
+
+      .small-box .inner h3 {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #fff;
+      }
+
+      .small-box .inner p {
+        font-size: 1.25rem;
+        color: #fff;
+        margin-top: 5px;
+      }
+
+      .small-box .icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 4rem;
+        color: rgba(255, 255, 255, 0.2);
+      }
+
+      .small-box-footer {
+        display: block;
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.1);
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 0 0 10px 10px;
+        margin-top: 15px;
+      }
+
+      .small-box-footer:hover {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    </style>
+
   </head>
 
   <body>
@@ -58,46 +116,81 @@
 
     <!-- content -->
     <div class="content-wrapper">
-            <!-- Content -->
-
-            <!-- / Content -->
-
-            <!-- Footer -->
-            @include('layouts.include.footer')
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
+      <div class="container-xxl flex-grow-1 container-p-y">
+        <!-- Kotak Data 1 -->
+        <div class="row">
+          <div class="col-md-4 col-6">
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>{{$publisher}}</h3>
+                <p>Jumlah Data Publisher</p>
+              </div>
+              <div class="icon">
+                <i class="bx bx-bookmark"></i> <!-- Ganti ikon sesuai kebutuhan -->
+              </div>
+              <a href="{{route('publisher.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
           </div>
-          <!-- Content wrapper -->
+
+          <!-- Kotak Data 2 -->
+          <div class="col-md-4 col-6">
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>{{$kategori}}</h3>
+                <p>Jumlah Data Kategori</p>
+              </div>
+              <div class="icon">
+                <i class="bx bx-category-alt"></i> <!-- Ganti ikon sesuai kebutuhan -->
+              </div>
+              <a href="{{route('kategori.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Kotak Data 3 -->
+          <div class="col-md-4 col-6">
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>{{$buku}}</h3>
+                <p>Jumlah Data Buku</p>
+              </div>
+              <div class="icon">
+                <i class="bx bx-book"></i> <!-- Ganti ikon sesuai kebutuhan -->
+              </div>
+              <a href="{{route('buku.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
         </div>
-        <!-- / Layout page -->
       </div>
-
-      <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
+    <!-- Content wrapper -->
     </div>
-    <!-- / Layout wrapper -->
+    <!-- / Layout page -->
+  </div>
 
-    <!-- Core JS -->
-    <!-- build:js assets/vendor/js/core.js -->
-    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
-    <script src="../assets/vendor/libs/popper/popper.js"></script>
-    <script src="../assets/vendor/js/bootstrap.js"></script>
-    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+  <!-- Overlay -->
+  <div class="layout-overlay layout-menu-toggle"></div>
+</div>
+<!-- / Layout wrapper -->
 
-    <script src="../assets/vendor/js/menu.js"></script>
-    <!-- endbuild -->
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+<script src="../assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../assets/vendor/libs/popper/popper.js"></script>
+<script src="../assets/vendor/js/bootstrap.js"></script>
+<script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
 
-    <!-- Vendors JS -->
-    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+<script src="../assets/vendor/js/menu.js"></script>
+<!-- endbuild -->
 
-    <!-- Main JS -->
-    <script src="../assets/js/main.js"></script>
+<!-- Vendors JS -->
+<script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
 
-    <!-- Page JS -->
-    <script src="../assets/js/dashboards-analytics.js"></script>
+<!-- Main JS -->
+<script src="../assets/js/main.js"></script>
 
-    <!-- Place this tag in your head or just before your close body tag. -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-  </body>
+<!-- Page JS -->
+<script src="../assets/js/dashboards-analytics.js"></script>
+
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
 </html>

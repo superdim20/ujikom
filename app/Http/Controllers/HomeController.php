@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Publisher;
+use App\Models\Kategori;
+use App\Models\Buku;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $kategori = Kategori::count('id');
+        $publisher = Publisher::count('id');
+        $buku = Buku::count('id');
+        return view('home', compact('publisher', 'kategori', 'buku'));
     }
 }
