@@ -123,7 +123,7 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>{{$publisher}}</h3>
-                <p>Jumlah Data Publisher</p>
+                <p>Jumlah Publisher</p>
               </div>
               <div class="icon">
                 <i class="bx bx-bookmark"></i> <!-- Ganti ikon sesuai kebutuhan -->
@@ -137,7 +137,7 @@
             <div class="small-box bg-success">
               <div class="inner">
                 <h3>{{$kategori}}</h3>
-                <p>Jumlah Data Kategori</p>
+                <p>Jumlah Kategori</p>
               </div>
               <div class="icon">
                 <i class="bx bx-category-alt"></i> <!-- Ganti ikon sesuai kebutuhan -->
@@ -151,7 +151,7 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3>{{$buku}}</h3>
-                <p>Jumlah Data Buku</p>
+                <p>Jumlah Buku</p>
               </div>
               <div class="icon">
                 <i class="bx bx-book"></i> <!-- Ganti ikon sesuai kebutuhan -->

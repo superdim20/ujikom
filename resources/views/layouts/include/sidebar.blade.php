@@ -91,19 +91,20 @@
                 </li>
                 <li class="#">
                   <a href="{{route('kategori.index')}}" class="menu-link">
-                  <i class="bx bx-file"></i>
+                  <i class="bx bx-file me-2"></i>
                     <div data-i18n="Without navbar">Kategori</div>
                   </a>
                 </li>
                 <li class="#">
                   <a href="{{route('buku.index')}}" class="menu-link">
-                  <i class="bx bx-book"></i>
+                  <i class="bx bx-book me-2"></i>
                     <div data-i18n="Container">Buku</div>
                   </a>
                 </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
-                    <div data-i18n="Fluid">Fluid</div>
+                <li class="#">
+                  <a href="#" class="menu-link">
+                  <i class="bx bx-user me-2"></i> 
+                    <div data-i18n="Fluid">Member</div>
                   </a>
                 </li>
                 <li class="menu-item">
