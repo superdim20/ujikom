@@ -32,7 +32,8 @@ class FrontendController extends Controller
    
     public function show($id)
     {
-        //
+        $buku = Buku::findOrFail($id);        
+        return view('detail', compact('buku'));
     }
 
    

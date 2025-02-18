@@ -23,6 +23,12 @@
     <link rel="stylesheet" href="{{asset ('front/assets/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset ('front/assets/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset ('front/assets/css/style.css')}}" type="text/css">
+    <style>
+    .product__item__text h5 {
+        color: white; /* Mengubah warna teks h5 menjadi putih di dalam product__item__text */
+    }
+</style>
+
 </head>
 
 <body>
@@ -98,25 +104,28 @@
                             </div>
                         </div>
                         <div class="row">
-    @foreach($buku as $data)
-        <div class="col-lg-4 col-md-6 col-sm-6">
-            <div class="product__item">
+                        @foreach($buku as $data)
+    <div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="product__item">
+            <!-- Membuat gambar bisa diklik -->
+            <a href="{{url('detail', $data->id)}}">
                 <div class="product__item__pic set-bg" data-setbg="{{ asset('/storage/bukus/'. $data->image) }}">
                     <div class="ep">18 / 18</div>
                     <div class="comment"><i class="fa fa-book"></i> {{$data->stok}}</div>
                     <div class="view"><i class="fa fa-eye"></i> 9141</div>
                 </div>
-                <div class="product__item__text">
-                    <ul>
-                        <li>{{$data->Kategori->nama_kategori}}</li>
-                    </ul>
-                    <h5><a href="#">{{$data->nama_buku}}</a></h5>
-                    <p>{{$data->author}}</p>
-                </div>
+            </a>
+            <div class="product__item__text">
+                <ul>
+                    <li>{{$data->Kategori->nama_kategori}}</li>
+                </ul>
+                <h5>{{$data->nama_buku}}</h5>
+                <p>{{$data->author}}</p>
             </div>
         </div>
-    @endforeach
-</div>
+    </div>
+@endforeach
+
 
 </div>
 </div>

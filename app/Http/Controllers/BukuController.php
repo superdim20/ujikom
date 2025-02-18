@@ -34,6 +34,7 @@ class BukuController extends Controller
         $request->validate([
             'nama_buku' => 'required', 'string', 'max:255',
             'author' => 'required',
+            'sinopsis' => 'required',
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'stok' => 'required',
         ]);
@@ -41,6 +42,7 @@ class BukuController extends Controller
         $buku = new Buku();
         $buku->nama_buku = $request->nama_buku;
         $buku->author = $request->author;
+        $buku->sinopsis = $request->sinopsis;
         $buku->stok = $request->stok;
         $buku->id_publisher = $request->id_publisher;
         $buku->id_kategori = $request->id_kategori;
@@ -81,6 +83,7 @@ class BukuController extends Controller
         $request->validate([
             'nama_buku' => 'required', 'string', 'max:255',
             'author' => 'required',
+            'sinopsis' => 'required',
             'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
             'stok' => 'required',
         ]);
@@ -88,6 +91,7 @@ class BukuController extends Controller
         $buku = Buku::findOrFail($id);
         $buku->nama_buku = $request->nama_buku;
         $buku->author = $request->author;
+        $buku->sinopsis = $request->sinopsis;
         $buku->stok = $request->stok;
         $buku->id_publisher = $request->id_publisher;
         $buku->id_kategori = $request->id_kategori;

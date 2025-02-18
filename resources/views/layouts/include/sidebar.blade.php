@@ -102,9 +102,9 @@
                   </a>
                 </li>
                 <li class="#">
-                  <a href="#" class="menu-link">
+                  <a href="{{ route('user.index')}}" class="menu-link">
                   <i class="bx bx-user me-2"></i> 
-                    <div data-i18n="Fluid">Member</div>
+                    <div data-i18n="Fluid">User</div>
                   </a>
                 </li>
                 <li class="menu-item">

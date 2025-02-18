@@ -65,6 +65,16 @@
                       <input type="text" name='author' class="form-control @error('author') is-invalid @enderror" id="basic-icon-default-nama_publsher"  placeholder="Author"  aria-describedby="basic-icon-default-fullname2" />
                     </div>
                   </div> 
+                 <!--Sinopsis  -->
+                 <div class="mb-3">
+                    <label class="form-label" for="basic-icon-default-sinopsis">Sinopsis</label>
+                    <div class="input-group input-group-merge">
+                      <span id="basic-icon-default-fullname2" class="input-group-text">
+                        <i class="bx bx-book"></i>
+                      </span>
+                      <input type="text-area" name='sinopsis' class="form-control @error('sinopsis') is-invalid @enderror" id="basic-icon-default-nama_publsher"  placeholder="sinopsis"  aria-describedby="basic-icon-default-fullname2" />
+                    </div>
+                  </div> 
                 <!-- publisher -->
                 <div class="mb-3">
                     <label for="publisher" class="form-label">Publisher</label>

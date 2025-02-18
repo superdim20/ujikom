@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_buku');
             $table->string('author');
+            $table->text('sinopsis');
             $table->bigInteger('id_publisher')->unsigned();
             $table->foreign('id_publisher')->references('id')->on('publishers')
             ->ondelete('cascade');

@@ -49,6 +49,7 @@
                   <th>No</th>
                   <th>Nama Buku</th>
                   <th>Author</th>
+                  <th>Sinopsis</th>
                   <th>Nama Publisher</th>
                   <th>Nama Kategori</th>
                   <th>Stok</th>
@@ -63,6 +64,7 @@
                     <td>{{ $no++ }}</td>
                     <td>{{ $data->nama_buku }}</td>   
                     <td>{{$data->author}}</td>
+                    <td>{{$data->sinopsis}}</td>
                     <td>{{$data->publisher->nama_publisher}}</td>
                     <td>{{$data->kategori->nama_kategori}}</td>
                     <td>{{$data->stok}}</td>
