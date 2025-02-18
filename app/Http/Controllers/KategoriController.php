@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\IsAdmin;
 use App\Models\Kategori ;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class KategoriController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth', IsAdmin::class]);
+    }
+
     public function index()
     {
         $kategori = Kategori::paginate(10);  // Menggunakan paginate untuk pagination

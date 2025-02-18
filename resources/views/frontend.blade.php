@@ -27,6 +27,7 @@
     .product__item__text h5 {
         color: white; /* Mengubah warna teks h5 menjadi putih di dalam product__item__text */
     }
+    
 </style>
 
 </head>
@@ -72,7 +73,7 @@
                 <div class="col-lg-2">
                     <div class="header__right">
                         <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="./login.html"><span class="icon_profile"></span></a>
+                        <a href="#"><span class="icon_profile"></span></a>
                     </div>
                 </div>
             </div>
@@ -149,7 +150,7 @@
             <div class="col-lg-6">
                 <div class="footer__nav">
                     <ul>
-                        <li class="active"><a href="./index.html">Homepage</a></li>
+                        <li class="active"><a href="#">Homepage</a></li>
                         <li><a href="./categories.html">Categories</a></li>
                         <li><a href="./blog.html">Our Blog</a></li>
                         <li><a href="#">Contacts</a></li>

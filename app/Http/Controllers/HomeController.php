@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\IsAdmin;
 use App\Models\Publisher;
 use App\Models\Kategori;
 use App\Models\Buku;
@@ -16,7 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', IsAdmin::class]);
     }
 
     /**

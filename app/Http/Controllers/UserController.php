@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -43,6 +44,7 @@ class UserController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->isAdmin = $request->isAdmin;
+        Alert::success('Success', 'Data berhasil disimpan')->autoClose(2000);
         $user->save();
 
         return redirect()->route('user.index');
@@ -74,14 +76,18 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->isAdmin = $request->isAdmin;
+        Alert::success('Success', 'Data berhasil diedit')->autoClose(2000);
         $user->save();
         return redirect()->route('user.index');
     }
 
     public function destroy($id)
     {
+        $user = User::findOrFail($id);  
+
         if (Auth::user()->id != $user->id) {
             $user->delete();
+            Alert::success('Success', 'Data berhasil dihapus')->autoClose(2000);
             return redirect()->route('user.index');
         }
         return redirect()->route('user.index');

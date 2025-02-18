@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\IsAdmin;
 use App\Models\Publisher ;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -11,7 +12,11 @@ class PublisherController extends Controller
     /**
      * Display a listing of the resource.
      */
-   
+    public function __construct()
+    {
+        $this->middleware(['auth', IsAdmin::class]);
+    }
+
         public function index()
     {
         $publisher = Publisher::paginate(10);  // Menggunakan paginate untuk pagination

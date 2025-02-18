@@ -68,6 +68,16 @@
                     </div>
                   </div>
                   <div class="mb-3">
+                    <label class="form-label" for="basic-icon-default-sinopsis">Sinopsis</label>
+                    <div class="input-group input-group-merge">
+                      <span id="basic-icon-default-fullname2" class="input-group-text">
+                        <i class="bx bx-user"></i>
+                      </span>
+                      <input type="text-area" name="sinopsis" class="form-control @error('sinopsis') is-invalid @enderror" id="basic-icon-default-sinopsis" placeholder="sinopsis" aria-describedby="basic-icon-default-fullname2" 
+                      value="{{ $buku->sinopsis}}"/>
+                    </div>
+                  </div>
+                  <div class="mb-3">
                     <label for="publisher" class="form-label">Publisher</label>
                     <select name="id_publisher" id="publisher" class="form-control">
                         @foreach ($publisher as $data)

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/owl.carousel.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('front/assets/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css')}}" type="text/css">
+
 </head>
 
 <body>
@@ -46,7 +47,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="./index.html">Homepage</a></li>
+                                <li class="active"><a href="#">Homepage</a></li>
                                 <li><a href="./categories.html">Categories <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="./categories.html">Categories</a></li>
@@ -106,6 +107,7 @@
                                             <li><span>Genre:</span> {{$buku->Kategori->nama_kategori}}</li>
                                         </ul>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="anime__details__btn">

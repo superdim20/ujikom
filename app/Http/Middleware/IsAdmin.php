@@ -16,7 +16,7 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::user()->isAdmin != 1) {
+        if (Auth::user()->isAdmin == 1) {
             // return redirect('/dashboard');
             return $next($request);
         }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Middleware\IsAdmin;
 use App\Models\Buku;
 use App\Models\Publisher;
 use App\Models\Kategori;
@@ -12,6 +13,11 @@ use RealRashid\SweetAlert\Facades\Alert;
 class BukuController extends Controller
 {
  
+    public function __construct()
+    {
+        $this->middleware(['auth', IsAdmin::class]);
+    }
+
     public function index()
     {
         $buku = Buku::with(['publisher', 'kategori'])->orderBy('id', 'desc')->get();
