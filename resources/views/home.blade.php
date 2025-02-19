@@ -116,55 +116,68 @@
 
     <!-- content -->
     <div class="content-wrapper">
-      <div class="container-xxl flex-grow-1 container-p-y">
-        <!-- Kotak Data 1 -->
-        <div class="row">
-          <div class="col-md-4 col-6">
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>{{$publisher}}</h3>
-                <p>Jumlah Publisher</p>
-              </div>
-              <div class="icon">
-                <i class="bx bx-bookmark"></i> <!-- Ganti ikon sesuai kebutuhan -->
-              </div>
-              <a href="{{route('publisher.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+  <div class="container-xxl flex-grow-1 container-p-y">
+    <!-- Kotak Data -->
+    <div class="row">
+      <!-- Kotak Data 1 (Publisher) -->
+      <div class="col-md-4 col-6 mb-4">
+        <div class="small-box bg-info">
+          <div class="inner">
+            <h3>{{$publisher}}</h3>
+            <p>Jumlah Publisher</p>
           </div>
-
-          <!-- Kotak Data 2 -->
-          <div class="col-md-4 col-6">
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>{{$kategori}}</h3>
-                <p>Jumlah Kategori</p>
-              </div>
-              <div class="icon">
-                <i class="bx bx-category-alt"></i> <!-- Ganti ikon sesuai kebutuhan -->
-              </div>
-              <a href="{{route('kategori.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
+          <div class="icon">
+            <i class="bx bx-bookmark"></i> <!-- Ikon Publisher -->
           </div>
-
-          <!-- Kotak Data 3 -->
-          <div class="col-md-4 col-6">
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>{{$buku}}</h3>
-                <p>Jumlah Buku</p>
-              </div>
-              <div class="icon">
-                <i class="bx bx-book"></i> <!-- Ganti ikon sesuai kebutuhan -->
-              </div>
-              <a href="{{route('buku.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
+          <a href="{{route('publisher.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
-    <!-- Content wrapper -->
+
+      <!-- Kotak Data 2 (Kategori) -->
+      <div class="col-md-4 col-6 mb-4">
+        <div class="small-box bg-success">
+          <div class="inner">
+            <h3>{{$kategori}}</h3>
+            <p>Jumlah Kategori</p>
+          </div>
+          <div class="icon">
+            <i class="bx bx-category-alt"></i> <!-- Ikon Kategori -->
+          </div>
+          <a href="{{route('kategori.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Kotak Data 3 (Buku) -->
+      <div class="col-md-4 col-6 mb-4">
+        <div class="small-box bg-warning">
+          <div class="inner">
+            <h3>{{$buku}}</h3>
+            <p>Jumlah Buku</p>
+          </div>
+          <div class="icon">
+            <i class="bx bx-book"></i> <!-- Ikon Buku -->
+          </div>
+          <a href="{{route('buku.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
+
+      <!-- Kotak Data 4 (User) -->
+      <div class="col-md-4 col-6 mb-4">
+        <div class="small-box bg-warning">
+          <div class="inner">
+            <h3>{{$user}}</h3>
+            <p>Jumlah User</p>
+          </div>
+          <div class="icon">
+            <i class="bx bx-user"></i> <!-- Ikon User -->
+          </div>
+          <a href="{{route('user.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+        </div>
+      </div>
     </div>
-    <!-- / Layout page -->
   </div>
+</div>
+
 
   <!-- Overlay -->
   <div class="layout-overlay layout-menu-toggle"></div>

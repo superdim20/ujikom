@@ -27,28 +27,30 @@ class UserController extends Controller
 
     public function create()
     {
-        return view('user.create');
-
+        return view('user.create'); // Tidak perlu mengirimkan 'user' ke tampilan
     }
 
     public function store(Request $request)
-    {
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+{
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+        'password' => ['required', 'string', 'min:8', 'confirmed'],
+    ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->isAdmin = $request->isAdmin;
-        Alert::success('Success', 'Data berhasil disimpan')->autoClose(2000);
-        $user->save();
+    // Menyimpan data baru
+    $user = new User();
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->password = Hash::make($request->password);  // Jangan lupa hash password
+    $user->isAdmin = $request->isAdmin;
+    $user->save();  // Simpan data
 
-        return redirect()->route('user.index');
-    }
+    Alert::success('Success', 'User berhasil disimpan')->autoClose(2000);
+
+    return redirect()->route('user.index');  // Redirect ke halaman daftar user setelah sukses
+}
+
 
 
     public function show($id)
@@ -58,12 +60,15 @@ class UserController extends Controller
 
   function edit($id)
     {
+        $user = User::findOrFail($id);
         return view('user.edit', compact('user'));
     }
 
     
     public function update(Request $request, $id)
     {
+        $user = User::findOrFail($id);
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => [

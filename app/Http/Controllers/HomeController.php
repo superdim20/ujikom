@@ -6,6 +6,7 @@ use App\Http\Middleware\IsAdmin;
 use App\Models\Publisher;
 use App\Models\Kategori;
 use App\Models\Buku;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -30,6 +31,7 @@ class HomeController extends Controller
         $kategori = Kategori::count('id');
         $publisher = Publisher::count('id');
         $buku = Buku::count('id');
-        return view('home', compact('publisher', 'kategori', 'buku'));
+        $user = User::count('id');
+        return view('home', compact('publisher', 'kategori', 'buku', 'user'));
     }
 }

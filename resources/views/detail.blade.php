@@ -7,7 +7,7 @@
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anime | Template</title>
+    <title>{{$buku->nama_buku}}</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +24,65 @@
     <link rel="stylesheet" href="{{ asset('front/assets/css/slicknav.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{ asset('front/assets/css/style.css')}}" type="text/css">
 
+    <style>
+        .button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 0px 4px rgb(255, 255, 255);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: 0.3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.button:hover {
+  width: 140px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 0, 0);
+  align-items: center;
+}
+
+.button:hover .svgIcon {
+  /* width: 20px; */
+  transition-duration: 0.3s;
+  transform: translateY(-200%);
+}
+
+.button::before {
+  position: absolute;
+  bottom: -20px;
+  content: "Back to Top";
+  color: white;
+  /* transition-duration: .3s; */
+  font-size: 0px;
+}
+
+.button:hover::before {
+  font-size: 13px;
+  opacity: 1;
+  bottom: unset;
+  /* transform: translateY(-30px); */
+  transition-duration: 0.3s;
+}
+
+    </style>
 </head>
 
 <body>
@@ -112,7 +171,7 @@
                             </div>
                             <div class="anime__details__btn">
                                 <a href="#" class="follow-btn"><i class="fa fa-heart-o"></i> Follow</a>
-                                <a href="#" class="watch-btn"><span>Watch Now</span> <i
+                                <a href="#" class="watch-btn"><span>Pinjam Sekarang</span> <i
                                     class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
@@ -122,12 +181,21 @@
             </div>
         </section>
         <!-- Anime Section End -->
-
+        <center>
+    <a href="#" id="scrollToTopButton">
+<button class="button">
+  <svg class="svgIcon" viewBox="0 0 384 512">
+    <path
+      d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"
+    ></path>
+  </svg>
+</button>
+</a>
+</center>
+<br>  
         <!-- Footer Section Begin -->
         <footer class="footer">
-            <div class="page-up">
-                <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
-            </div>
+          
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3">

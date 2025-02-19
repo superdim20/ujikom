@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Peminjaman;
+use App\Models\Borrowing;
 use Illuminate\Http\Request;
 
-class PeminjamanController extends Controller
+class BorrowingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PeminjamanController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Peminjaman  $peminjaman
+     * @param  \App\Models\Borrowing  $borrowing
      * @return \Illuminate\Http\Response
      */
-    public function show(Peminjaman $peminjaman)
+    public function show(Borrowing $borrowing)
     {
         //
     }
@@ -52,10 +52,10 @@ class PeminjamanController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Peminjaman  $peminjaman
+     * @param  \App\Models\Borrowing  $borrowing
      * @return \Illuminate\Http\Response
      */
-    public function edit(Peminjaman $peminjaman)
+    public function edit(Borrowing $borrowing)
     {
         //
     }
@@ -64,10 +64,10 @@ class PeminjamanController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Peminjaman  $peminjaman
+     * @param  \App\Models\Borrowing  $borrowing
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Peminjaman $peminjaman)
+    public function update(Request $request, Borrowing $borrowing)
     {
         //
     }
@@ -75,10 +75,10 @@ class PeminjamanController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Peminjaman  $peminjaman
+     * @param  \App\Models\Borrowing  $borrowing
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Peminjaman $peminjaman)
+    public function destroy(Borrowing $borrowing)
     {
         //
     }
