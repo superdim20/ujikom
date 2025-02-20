@@ -18,17 +18,9 @@ class FrontendController extends Controller
     }
 
    
-    public function create()
-    {
-        //
-    }
-
+  
     
-    public function store(Request $request)
-    {
-        //
-    }
-
+  
    
     public function show($id)
     {
@@ -37,20 +29,10 @@ class FrontendController extends Controller
     }
 
    
-    public function edit($id)
-    {
-        //
-    }
-
    
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
+   
     
-    public function destroy($id)
-    {
-        //
-    }
+    
+   
+
 }
